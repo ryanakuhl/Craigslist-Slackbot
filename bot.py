@@ -9,7 +9,7 @@ slack_client = SlackClient('your slack bot token goes here. More info:https://ap
 #searches CL for keyword and posts to Slack
 def cl():    
     url_base = ('https://louisville.craigslist.org/search/sss')
-    params = dict(query=keyword, sort='date', search_distance=30, postal=40243, hasPic=1)
+    params = dict(query=keyword, sort='date')#etc - just add parameters as you see fit. Taken from cl.com search url then reformat
     rsp = requests.get(url_base, params=params)
     html = bs4(rsp.text, 'html.parser')
     shit = []
